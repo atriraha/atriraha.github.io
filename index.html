@@ -20,8 +20,28 @@
         h3{
             color: limegreen;
         }
-        p,a,b{
+        p,b{
             color: white;
+        }
+        a{
+            color: deepskyblue;
+        }
+        a:hover{
+            color: limegreen;
+            text-decoration: none;
+        }
+        .question{
+            color: blue;
+        }
+        .question:hover{
+            color: darkblue;
+        }
+        pre code{
+            display: block;
+            color: limegreen;
+        }
+        code{
+            color: limegreen;
         }
     </style>
 </head>
@@ -29,6 +49,9 @@
     <div class="container">
         <div class="row">
              <h1>DSA Practice in JAVA</h1>
+        </div>
+        <div class="row">
+            <p>For Questions, I will be referring to <a href="https://docs.google.com/spreadsheets/d/1-wKcV99KtO91dXdPkwmXGTdtyxAfk1mbPXQg81R9sFE/htmlview" target="_blank">this</a> sheet.</p>
         </div>
         <div class="row">
              <h3>Arrays</h3>
@@ -44,7 +67,7 @@
                 <ul class="list-group">
                      <li class="list-group-item">
                          One Dimensional Arrays can be declared in following ways: int[]a, int []a, int a[], int[]a. 
-                         Similarly, Two Dimensional Arrays can be declared in following ways: int [][]a, int[] []a, int a[][], int[] a[]. 
+                         Similarly, Two Dimensional Arrays can be declared in following ways: int [][]a, int[] []a, int a[][], int[] a[]. But <code>int[][] a,[]b </code> will give compile time error.
                      </li>
             </ul>
                  
@@ -64,8 +87,79 @@
             
                 <ul class="list-group">
                      <li class="list-group-item">
-                         Array creation with both dimension expression and initialization is illegal
+                         Array creation with both dimension expression and initialization is illegal eg.
                          <code>int[] a = new int[4]{100,200,300,400};</code>. The correct way is <code>int[] a = new int[]{100,200,300,400};</code>.
+                     </li>
+            </ul>
+                 
+            
+        </div>
+        <div class="row">
+            
+                <ul class="list-group">
+                     <li class="list-group-item">
+                         One approach to initialize 2D arrays is <code>int[][] a={{100,200,300},{400,500,600},{700,800,900}}</code>. Now If you do <code>System.out.println(a);</code> Result will be <code>[[I@someHashValue</code> where '[['  signifies 2d array and 'I' stands for int datatype.
+                     </li>
+            </ul>
+                 
+            
+        </div>
+        <div class="row">
+            
+                <ul class="list-group">
+                     <li class="list-group-item">
+                                 Declaring a 2-D Jagged array. Arrays with no fixed number of columns.
+
+                        <pre>
+                        <code>
+        int arr[][] = new int[2][];
+ 
+        // First row has 3 columns
+        arr[0] = new int[3];
+ 
+        // Second row has 2 columns
+        arr[1] = new int[2];                  
+                        </code>
+                        </pre>
+                     </li>
+            </ul>
+                 
+            
+        </div>
+        <div class="row">
+            
+                 <b>Problems and Solution: </b> 
+                 
+            
+        </div>
+        <div class="row">
+            
+                <ul class="list-group">
+                     <li class="list-group-item">
+                                
+             <a href="https://leetcode.com/problems/two-sum/" target="_blank" class="question">Question Link</a>
+                     </li>
+                <li class="list-group-item">
+
+                        <pre>
+                        <code>
+ class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] a = new int[]{-1,-1};
+        for(int i=0;i&lt;nums.length-1;i++){
+            for(int j=i+1;j&lt;nums.length;j++){
+                if(nums[i]+nums[j]==target){
+                    a[0]=i;
+                    a[1]=j;
+                    break;
+                }
+            }
+        }
+        return a;
+    }
+}    
+                        </code>
+                        </pre>
                      </li>
             </ul>
                  
